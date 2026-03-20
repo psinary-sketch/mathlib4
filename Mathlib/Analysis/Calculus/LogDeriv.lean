@@ -149,7 +149,4 @@ theorem AnalyticAt.tendsto_mul_logDeriv_simple_zero [CompleteSpace 𝕜]
     Filter.Tendsto (fun w => (w - x) * logDeriv f w)
       (𝓝[≠] x) (𝓝 1) := by
   have h_slope := hasDerivAt_iff_tendsto_slope.mp hf.differentiableAt.hasDerivAt
-  rw [← div_self hf']
-  convert hf.deriv.continuousAt.tendsto.mono_left nhdsWithin_le_nhds |>.div h_slope hf' using 2
-  simp [logDeriv, slope, hfx]
-  field
+ (feat(Analysis/Calculus): logarithmic residue at simple zeros)
